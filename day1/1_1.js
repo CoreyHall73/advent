@@ -1,3 +1,4 @@
+//import {readFileSync, promises as fsPromises} from 'fs';
 const {readFileSync, promises: fsPromises} = require('fs');
 
 function sumOfMostCals() {
@@ -37,27 +38,17 @@ function sumOfMostCals() {
 			if (sum > mostCals) {
 				mostCals = sum;
 			} 
-			if (sum < mostCals) {
-				pivotFor3 = sum;
+			if (sum > mostCals2 && sum < mostCals) {
+				mostCals2 = sum;
 				//console.log("hit1");
 			}
-			if (mostCals3 < pivotFor3 && sum < mostCals) {
-				console.log("hit2");
+			if (sum > mostCals3 && sum < mostCals2) {
 				mostCals3 = sum;
-			}
-			if (mostCals2 < mostCals3 && sum < mostCals3) {
-				console.log("p");
-				mostCals2 = sum;
-			}
-			
-				
-			
-			
+			}		
 		}	
 		if (typeof intArr[index] == "string") {
 			sum = 0;
-		}
-		  			
+		}		  			
 	}
 	//console.log(sum);
 	//console.log(timesAdded);   
