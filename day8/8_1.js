@@ -9,7 +9,7 @@ const lines = readFileSync("8.txt", { encoding: "utf-8" }) // read day??.txt con
 function visTree() {
 	console.log(lines);
 	for (i = 1; i < lines.length - 1; i++) {
-		console.log(lines[i]);
+		//console.log(lines[i]);
 		for (j = 1; j < lines[i].length - 1; j++) {
 			console.log(lines[i][j]);
 			
