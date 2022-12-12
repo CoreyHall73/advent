@@ -8,11 +8,17 @@ const lines = readFileSync("10.txt", { encoding: "utf-8" }) // read day??.txt co
 let sortedArr = [];
     
 function signalCycle() {
+	let tempArr = [];
 	//console.log(lines);
 	for (i = 0; i < lines.length; i ++) {
 		if (lines[i].includes("addx")) {
 			//console.log("Add");
-			sortedArr.push(~~lines[i]);
+			for (j = 0; j < lines[i].length; j++) {
+				if ((lines[i][j] == "-") || (parseInt(lines[i][j]) != "Nan")) {
+					tempArr.push(parseInt(lines[i][j]));
+				}
+			}
+			sortedArr.push(tempArr);
 		} else {
 			//console.log("Noop");
 			sortedArr.push(lines[i]);
